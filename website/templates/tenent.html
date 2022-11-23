@@ -69,12 +69,14 @@
               <th>Time sent</th>
             </tr>
             {% for i in curr_msg %}
+              {% if i.soruce == user.email or i.dest == user.email %}
               <tr>
                 <td>{{ i.source }}</td>
                 <td>{{ i.dest }}</td>
                 <td>{{ i.data }}</td>
                 <td>{{ i.date }}</td>
               </tr>
+              {% endif %}
             {% endfor %}
           </table>
           <br>
